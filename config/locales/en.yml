@@ -70,3 +70,7 @@ en:
         your_gift_card_code: "Here is your gift card code"
         gift_card_code: "Gift card code: %{code}"
         subject: "Your gift card code"
+    hints:
+      spree/virtual_gift_card:
+        active: "When checked, the product is processed as a gift card.<br/> Default: Unchecked"
+

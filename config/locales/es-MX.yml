@@ -70,3 +70,6 @@ es-MX:
         your_gift_card_code: "Aquí está el código de su tarjeta de regalo"
         gift_card_code: "Código de tarjeta de regalo: %{code}"
         subject: "Su código de tarjeta de regalo"
+    hints:
+      spree/virtual_gift_card:
+        active: "Cuando está marcado, el producto se procesa como una tarjeta de regalo. <br/> Predeterminado: No seleccionado"
