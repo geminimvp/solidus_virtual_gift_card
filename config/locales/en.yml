@@ -17,6 +17,10 @@ en:
         one: "Gift Card"
         other: "Gift Cards"
   spree:
+    gift_cards:
+      redeemed_successfully: "The Gift Card was redeemed successfully"
+      errors:
+        not_found: "Gift card was not found, Please try again"
     immediately: "Immediately"
     admin:
       order_number: "Order Number"
@@ -55,7 +59,7 @@ en:
         send_email_at: "Send email at"
         send_email_confirmation: "Any changes that have not been updated will not send"
         errors:
-          not_found: "Gift card was not found"
+          not_found: "Gift card was not found, Please try again"
           please_try_again: "Please try again"
           unable_to_deactivate_gift_card: "Unable to deactivate gift card"
           unable_to_redeem_gift_card: "Unable to redeem gift card"
