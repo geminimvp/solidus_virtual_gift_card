@@ -17,6 +17,10 @@ es-MX:
         one: "Tarjeta de Regalo"
         other: "Tarjetas de Regalo"
   spree:
+    gift_cards:
+      redeemed_successfully: "La Tarjeta Regalo fue canjeada exitosamente."
+      errors:
+        not_found: "No se encontró la tarjeta de regalo, Por favor, inténtalo de nuevo"
     immediately: "Inmediatamente"
     admin:
       order_number: "Número de Orden"
@@ -55,7 +59,7 @@ es-MX:
         send_email_at: "Enviar correo electrónico a"
         send_email_confirmation: "Cualquier cambio que no haya sido actualizado no será enviado"
         errors:
-          not_found: "No se encontró la tarjeta de regalo"
+          not_found: "No se encontró la tarjeta de regalo, Por favor, inténtalo de nuevo"
           please_try_again: "Por favor, inténtalo de nuevo"
           unable_to_deactivate_gift_card: "No se puede desactivar la tarjeta de regalo"
           unable_to_redeem_gift_card: "No se puede canjear la tarjeta de regalo"
