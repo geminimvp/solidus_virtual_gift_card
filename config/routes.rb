@@ -25,7 +25,7 @@ Spree::Core::Engine.routes.draw do
   end
 
   namespace :api, defaults: { format: 'json' } do
-    resources :gift_cards, only: [] do
+    resources :gift_cards, only: [:show, :update] do
       collection do
         post :redeem
       end
