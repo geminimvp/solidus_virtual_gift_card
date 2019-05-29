@@ -27,6 +27,12 @@ module Spree
 
         def finalize!
           super
+
+          unless user.present?
+            new_user = SolidusVirtualGiftCard::UserGenerator.new(self).user
+            update_attributes(user_id: new_user.id)
+          end
+
           inventory_units = self.inventory_units
           gift_cards.each_with_index do |gift_card, index|
             gift_card.make_redeemable!(purchaser: user, inventory_unit: inventory_units[index])
