@@ -20,8 +20,16 @@ module SolidusVirtualGiftCard
       existing_user || create_stub_user
     end
 
+    def existing_user_attrs
+      { email: order.email }.tap do |u_attrs|
+        if Spree.user_class.new.respond_to?(:team)
+          u_attrs[:team] = order.team
+        end
+      end
+    end
+
     def existing_user
-      Spree.user_class.where(email: order.email, team: order.team).first
+      Spree.user_class.where(existing_user_attrs).first
     end
 
     def create_stub_user
@@ -30,6 +38,9 @@ module SolidusVirtualGiftCard
         email: order.email,
         password: initial_password,
       }
+      if Spree.user_class.new.respond_to?(:team)
+        user_attrs[:team] = order.team
+      end
       Spree.user_class.create!(user_attrs)
     end
 

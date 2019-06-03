@@ -3,8 +3,6 @@
 module Spree
   module Api
     class GiftCardsController < Spree::Api::BaseController
-      skip_before_action :load_user, only: [:show, :update, :redeem]
-      skip_before_action :authenticate_user, only: [:show, :update, :redeem]
 
       before_action :load_gift_card, only: [:show, :update]
 
