@@ -35,6 +35,9 @@ module Spree
 
           inventory_units = self.inventory_units
           gift_cards.each_with_index do |gift_card, index|
+            unless gift_card.recipient_email.present?
+              gift_card.recipient_email = email
+            end
             gift_card.make_redeemable!(purchaser: user, inventory_unit: inventory_units[index])
           end
         end

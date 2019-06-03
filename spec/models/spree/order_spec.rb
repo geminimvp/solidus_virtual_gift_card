@@ -15,6 +15,17 @@ describe Spree::Order do
         expect(gift_card.reload.redeemable).to be true
         expect(gift_card.reload.redemption_code).to be_present
       end
+
+      context 'when the gift card has no recipient info' do
+        let(:gift_card) {
+          create(:virtual_gift_card, recipient_email: nil, recipient_name: nil)
+        }
+
+        it 'sets the recipient email to the order email' do
+          subject
+          expect(gift_card.reload.recipient_email).to eq(order.email)
+        end
+      end
     end
   end
 
